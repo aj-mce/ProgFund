@@ -1,0 +1,76 @@
+ 		import java.util.Scanner;
+		import java.util.Random;
+
+public class Cipher
+{
+	public static void main(String[] args)
+	{
+		  
+		int temp,ones,tens,number = 0;
+		var scan = new Scanner( System.in );
+		//block message as specified
+		System.out.println("Programming Fundamentals SUM21");
+        System.out.println("NAME: Amanda M");
+        System.out.println("PROGRAMMING ASSIGNMENT 1");
+        System.out.println("");
+		System.out.println("Welcome to the Cipher program");
+		System.out.println("Enter 5 digits between 0 to 19");
+		  
+		// 
+		for(int i =0; i < 5 ; i++)
+		{
+			//user number selection
+			 if(i==0)
+             {
+                 System.out.print("1st number: ");
+             }
+             else if(i==1)
+             {
+                 System.out.print("2nd number: ");
+             }
+             else if(i==2)
+             {
+                 System.out.print("3rd number: ");
+             }
+             else if(i==3)
+             {
+                 System.out.print("4th number: ");
+             }
+             else
+             {
+                 System.out.print("5th number: ");
+             }
+			temp = scan.nextInt();
+			//choosing invalid numbers
+			if(temp >=0 && temp <=19 )
+			{
+			number = number + temp;
+			}
+			else
+			{
+				System.out.println("Please read directions and try again!");
+				System.exit(0);
+			}
+		}
+		//key 
+		Random random = new Random();
+		int rand = random.nextInt(10);
+		System.out.println("Your random key is "+rand);
+		  
+		ones = number/10;
+		tens = number%10;
+		{
+			
+		}
+		  
+		//encoding
+		ones = ones + rand;
+		tens = tens + rand;
+		ones = ones%10;
+		tens = tens%10;
+		  
+		//output
+		System.out.println("Your encoded number is "+ones+tens);
+		  
+	}
+}
